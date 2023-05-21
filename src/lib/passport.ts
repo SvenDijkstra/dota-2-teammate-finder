@@ -1,3 +1,5 @@
+// passport.ts
+import { profile } from "console";
 import passport from "passport";
 import passportSteam from "passport-steam";
 
@@ -10,6 +12,7 @@ export interface SteamProfile {
     identifier: string,
     photos: Image,
     provider: string
+	steamID3: string; // Add this property
 }
 
 interface Image {
@@ -31,5 +34,6 @@ passport.use(new SteamStrategy({
 	// Fetch any more information to populate
 	return done(null, profile);
 }));
+
 
 export default passport;
